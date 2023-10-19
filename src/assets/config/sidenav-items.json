@@ -1,0 +1,38 @@
+[
+  {
+    "icon": "/assets/images/sidebar-icons/overview.svg",
+    "label": "Overview",
+    "routerLink": [
+      "/"
+    ]
+  },
+  {
+    "icon": "/assets/images/sidebar-icons/pages.svg",
+    "label": "Pages",
+    "children": [
+      {
+        "label": "Settings",
+        "routerLink": [
+          "/"
+        ]
+      },
+      {
+        "label": "Kanban",
+        "routerLink": [
+          "/"
+        ]
+      },
+      {
+        "label": "Calendar",
+        "routerLink": [
+          "/"
+        ]
+      }
+    ]
+  },
+  {
+    "icon": "/assets/images/sidebar-icons/messages.svg",
+    "label": "Messages",
+    "badge": 4
+  }
+]
