@@ -5,7 +5,16 @@ const routes: Routes = [
   {
     path: 'sign-in',
     loadChildren: () =>
-      import('./modules/authentication/authentication.module').then((m) => m.AuthenticationModule),
+      import('./modules/authentication/authentication.module').then(
+        (m) => m.AuthenticationModule,
+      ),
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./modules/dashboard/dashboard.module').then(
+        (m) => m.DashboardModule,
+      ),
   },
 ];
 
