@@ -1,1 +1,5 @@
-export type ScreenSize = 'SMALL' | 'MEDIUM' | 'LARGE';
+export enum ScreenSize {
+  SMALL = 'SMALL',
+  MEDIUM = 'MEDIUM',
+  LARGE = 'LARGE',
+}

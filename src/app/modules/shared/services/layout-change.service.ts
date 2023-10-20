@@ -9,13 +9,16 @@ import { ScreenSize } from '../types/screen-size.type';
 
 const BREAKPOINT_MAPPING: Map<ScreenSize, string[]> = new Map();
 
-BREAKPOINT_MAPPING.set('SMALL', [
+BREAKPOINT_MAPPING.set(ScreenSize.SMALL, [
   Breakpoints.XSmall,
   Breakpoints.Small,
   Breakpoints.Handset,
 ]);
-BREAKPOINT_MAPPING.set('MEDIUM', [Breakpoints.Medium, Breakpoints.Tablet]);
-BREAKPOINT_MAPPING.set('LARGE', [
+BREAKPOINT_MAPPING.set(ScreenSize.MEDIUM, [
+  Breakpoints.Medium,
+  Breakpoints.Tablet,
+]);
+BREAKPOINT_MAPPING.set(ScreenSize.LARGE, [
   Breakpoints.Large,
   Breakpoints.XLarge,
   Breakpoints.Web,
