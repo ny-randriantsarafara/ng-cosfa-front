@@ -3,9 +3,14 @@
     <button
       type="button"
       class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+      (click)="toggleDropdown()"
     >
-      <img *ngIf="value?.icon" [src]="value?.icon" [alt]="value?.label"
-           class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
+      <img
+        *ngIf="value?.icon"
+        [src]="value?.icon"
+        [alt]="value?.label"
+        class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+      />
       <span class="flex-1 ml-3 text-left whitespace-nowrap">{{ value?.label }}</span>
       <svg
         *ngIf="value?.children?.length"
@@ -21,22 +26,28 @@
         ></path>
       </svg>
     </button>
-    <!-- TODO: display this -->
-    <ul *ngIf="value?.children?.length" id="dropdown-authentication" class="hidden py-2 space-y-2">
+    <ul #dropdown *ngIf="value?.children?.length" id="dropdown-authentication" class="hidden py-2 space-y-2">
       <app-sidenav-item *ngFor="let subElement of value?.children" [value]="subElement"></app-sidenav-item>
     </ul>
   </ng-template>
   <!-- TODO: fix badge display -->
   <ng-template [ngIf]="value?.badge">
-    <a [routerLink]="value?.routerLink"
-       class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-      <img *ngIf="value?.icon" [src]="value?.icon" [alt]="value?.label"
-           class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
+    <a
+      [routerLink]="value?.routerLink"
+      class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+    >
+      <img
+        *ngIf="value?.icon"
+        [src]="value?.icon"
+        [alt]="value?.label"
+        class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+      />
       <span class="flex-1 ml-3 whitespace-nowrap">{{ value?.label }}</span>
       <span
-        class="inline-flex justify-center items-center w-5 h-5 text-xs font-semibold rounded-full text-primary-800 bg-primary-100 dark:bg-primary-200 dark:text-primary-800">
+        class="inline-flex justify-center items-center w-5 h-5 text-xs font-semibold rounded-full text-primary-800 bg-primary-100 dark:bg-primary-200 dark:text-primary-800"
+      >
         {{ value?.badge }}
-                  </span>
+      </span>
     </a>
   </ng-template>
 </li>

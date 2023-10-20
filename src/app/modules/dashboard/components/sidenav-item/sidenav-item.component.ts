@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {SidenavItem} from "../sidenav/sidenav.component";
 
 @Component({
@@ -8,4 +8,12 @@ import {SidenavItem} from "../sidenav/sidenav.component";
 })
 export class SidenavItemComponent {
   @Input() value?: SidenavItem;
+  @ViewChild('dropdown') dropdown?: ElementRef;
+
+  toggleDropdown() {
+    if (!Array.isArray(this.value?.children) || this.value?.children.length === 0) {
+      return;
+    }
+    (this.dropdown?.nativeElement as HTMLElement).classList.toggle(('hidden'));
+  }
 }
