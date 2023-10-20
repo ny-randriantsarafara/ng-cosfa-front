@@ -16,14 +16,20 @@ export class SidenavItem {
   styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent implements OnInit {
-  items: SidenavItem[] = [];
+  topSidenavItems: SidenavItem[] = [];
+  bottomSidenavItems: SidenavItem[] = [];
 
   async ngOnInit(): Promise<void> {
     try {
-      const sidenavItems = await fetch(
-        '/assets/config/sidenav-items.json',
+      const topSidenavItems = await fetch(
+        '/assets/config/top-sidenav.json',
       ).then((response) => response.json());
-      this.items = this.parseSidenavItems(sidenavItems);
+      const bottomSidenavItems = await fetch(
+        '/assets/config/bottom-sidenav.json',
+      ).then((response) => response.json());
+
+      this.topSidenavItems = this.parseSidenavItems(topSidenavItems);
+      this.bottomSidenavItems = this.parseSidenavItems(bottomSidenavItems);
     } catch (e) {
       console.error('Could not retrieve sidenav configuration');
     }

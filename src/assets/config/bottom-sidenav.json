@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "/assets/images/sidebar-icons/docs.svg",
+    "label": "Docs",
+    "routerLink": [
+      "/"
+    ]
+  },
+  {
+    "icon": "/assets/images/sidebar-icons/components.svg",
+    "label": "Components"
+  },
+  {
+    "icon": "/assets/images/sidebar-icons/help.svg",
+    "label": "Help"
+  }
+]
