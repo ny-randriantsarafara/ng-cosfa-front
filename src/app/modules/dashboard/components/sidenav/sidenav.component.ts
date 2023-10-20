@@ -11,6 +11,10 @@ export class SidenavComponent implements OnInit {
   bottomSidenavItems: SidenavItem[] = [];
 
   async ngOnInit(): Promise<void> {
+    await this.buildSidenav();
+  }
+
+  private async buildSidenav() {
     try {
       const topSidenavItems = await fetch(
         '/assets/config/top-sidenav.json',
@@ -26,7 +30,7 @@ export class SidenavComponent implements OnInit {
     }
   }
 
-  parseSidenavItems(items: unknown[]): SidenavItem[] {
+  private parseSidenavItems(items: unknown[]): SidenavItem[] {
     if (
       typeof items === 'undefined' ||
       !Array.isArray(items) ||
