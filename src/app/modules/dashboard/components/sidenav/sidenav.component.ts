@@ -1,14 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export class SidenavItem {
-  constructor(
-    public label: string,
-    public icon?: string,
-    public badge?: string | number,
-    public routerLink?: string[],
-    public children?: SidenavItem[],
-  ) {}
-}
+import { SidenavItem } from '../../types/sidenav-item.class';
 
 @Component({
   selector: 'app-sidenav',
