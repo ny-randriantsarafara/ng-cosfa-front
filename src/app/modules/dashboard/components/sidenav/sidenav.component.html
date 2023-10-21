@@ -6,12 +6,12 @@
   <div class="overflow-y-auto py-5 px-3 h-full bg-white dark:bg-gray-800">
     <app-search-bar></app-search-bar>
     <ul class="space-y-2">
-      <app-sidenav-item *ngFor="let item of topSidenavItems" [value]="item"></app-sidenav-item>
+      <app-sidenav-item *ngFor="let item of (sidenavItems$ | async)?.at(0)" [value]="item"></app-sidenav-item>
     </ul>
     <ul
       class="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700"
     >
-      <app-sidenav-item *ngFor="let item of bottomSidenavItems" [value]="item"></app-sidenav-item>
+      <app-sidenav-item *ngFor="let item of (sidenavItems$ | async)?.at(1)" [value]="item"></app-sidenav-item>
     </ul>
   </div>
   <div

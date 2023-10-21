@@ -5,7 +5,7 @@ import {
   BreakpointState,
 } from '@angular/cdk/layout';
 import { map, Observable } from 'rxjs';
-import { ScreenSize } from '../types/screen-size.type';
+import { ScreenSize } from '../../types/screen-size.type';
 
 const BREAKPOINT_MAPPING: Map<ScreenSize, string[]> = new Map();
 

@@ -1,6 +1,6 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 
-import {SidenavItem} from "../../types/sidenav-item.class";
+import {SidenavItem} from "../../types/sidenav-item.interface";
 
 @Component({
   selector: 'app-sidenav-item',

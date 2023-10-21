@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LayoutChangeService } from '../shared/services/layout-change.service';
+import { LayoutChangeService } from '../shared/services/layout-change/layout-change.service';
 
 @Component({
   selector: 'app-dashboard',
